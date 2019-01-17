@@ -1,0 +1,23 @@
+<div class="text-center">
+  <link rel="stylesheet" href="/css/style.css">
+  <form action="/dashboard" method="POST" class="form-signin">
+    {{#if errors}}
+    <div class="alert alert-danger">
+      <strong>{{errors.content}}</strong>
+    </div>
+    {{/if}}
+    <img src="/assets/logo.png" alt="logo" class="mb-4" width="80" height="100">
+    <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+    <label for="inputUsername" class="sr-only">Username</label>
+    <input name="username" type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <div class="form-check checkbox mb-3">
+      <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+      <label class="form-check-label" for="defaultCheck1">
+        Remember Me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-lg btn-primary btn-block">Log In</button>
+</form>
+</div>

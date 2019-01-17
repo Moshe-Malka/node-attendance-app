@@ -1,0 +1,72 @@
+<!-- Include Required Prerequisites -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+<!--  Start of left NavBar -->
+<div class="row">
+  <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+            <a id="add_record" class="pull-right add-record ml-3 nav-link active">
+              <img src="/assets/calendar.svg" width="45px" height="85px"/>&nbsp;Add Timestamp
+            </a>
+        </li>
+        <li class="nav-item">
+          <a id="add_worker" class="pull-right add_worker nav-link active">
+            <img src="/assets/user.svg" width="45px" height="85px"/>&nbsp;Add new Worker
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <!-- Start of page sub-header -->
+    <div id="datepicker_container" class="container">
+      <div class="row justify-content-left">
+        <div class="col-md-auto justify-content-center">
+          <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+            <span></span> <b class="caret"></b>
+          </div>
+          <script src="/js/handleDateTimePicker.js"></script>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- End of page sub-header -->
+
+    <!-- Start of Table Container -->
+    <div id="table_container" class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <table style="width: 900px; cellspacing: 0; cellpadding: 0;" id="mytable" class="table table-striped table-condensed table-bordered table-hover">
+          <thead>
+              <tr>
+                <th style="width: 25%">Full Name</th>
+                <th style="width: 25%">RFID Tag Number</th>
+                <th style="width: 50%">Attendance</th>
+              </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      </div>
+    <script src="/js/addTimestampByRFID.js"></script>
+    <script src="/js/handleAddNewWorker.js"></script>
+    <!-- End of Table Container -->
+  </main>
+</div>
+<div id="alertBar" class="alert alert-danger row justify-content-center">
+  <strong>No Results</strong>
+</div>

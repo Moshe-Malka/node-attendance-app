@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Comitatus App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body onload="getToken()">
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Resetting Your Password</h1>
+        <p class="lead">you have requested to reset your password. after clicking Submit you will get a confirmation email. at that point you can use your new password.</p>
+        <form action="/newpassword" method="post" class="form-signin">
+          <div class="form-group">
+            <label for="password">New Password</label>
+            <input type="password" class="form-control" id="n_Password" placeholder="Enter new password" name="password">
+            <script src="js/getToken.js" type="text/javascript"></script>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <br>
+          {{#if success}}
+          <div class="alert alert-success">
+            <strong>{{success.title}}</strong>
+            <br>
+            <span>{{success.content}}</span>
+          </div>
+          {{/if}}
+        </form>
+      </main>
+    </div>
+</body>
+<footer>
+  <div class="text-center">
+    <p class="mt-3 mb-3 text-muted">© 2018</p>
+  </div>
+</footer>
+</html>

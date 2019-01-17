@@ -1,0 +1,30 @@
+<div class="text-center">
+  <link rel="stylesheet" href="/css/style.css">
+  <form action="/forgot" method="POST" class="form-signin">
+    <span class="pull-right ml-3">
+      <h1 class="h3 font-weight-normal">
+        <img src="/assets/forgot_password.svg" width="45px" height="85px"/>
+        Password Reset
+      </h1>
+    </span>
+    <div class="form-group">
+      <label for="inputEmail" class="sr-only">Email</label>
+      <input name="email" type="email" id="inputEmail" class="form-control mb-3" placeholder="Email" required autofocus>
+      <small id="emailHelp" class="form-text text-muted mb-3">We'll never share your email with anyone else.</small>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Reset</button>
+    <br>
+    {{#if errors}}
+    <div class="alert alert-danger">
+      <strong>Reset Failed !</strong>
+      <br>
+      <span>{{errors}}</span>
+    </div>
+    {{/if}}
+    {{#if success}}
+    <div class="alert alert-success">
+      <strong>{{success}}</strong>
+    </div>
+    {{/if}}
+  </form>
+</div>
